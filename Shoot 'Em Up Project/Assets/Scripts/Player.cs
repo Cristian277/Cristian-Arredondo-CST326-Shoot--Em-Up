@@ -4,9 +4,10 @@ using UnityEngine;
 
 public class Player : MonoBehaviour
 {
-  public GameObject bullet;
-
-  public Transform shottingOffset;
+    public GameObject bullet;
+    public GameObject Manager;
+    public Transform shottingOffset;
+    public int speed = 5;
     // Update is called once per frame
     void Update()
     {
@@ -16,7 +17,9 @@ public class Player : MonoBehaviour
         Debug.Log("Bang!");
 
         Destroy(shot, 3f);
-
       }
+
+        transform.Translate(Input.GetAxisRaw("Horizontal") * speed * Time.deltaTime, 0f,0f);
+
     }
 }
