@@ -11,15 +11,15 @@ public class Player : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-      if (Input.GetKeyDown(KeyCode.Space))
-      {
-        GameObject shot = Instantiate(bullet, shottingOffset.position, Quaternion.identity);
-        Debug.Log("Bang!");
+        if (Input.GetKeyDown(KeyCode.Space))
+        {
+            GameObject shot = Instantiate(bullet, shottingOffset.position, Quaternion.identity);
+            Debug.Log("Bang!");
 
-        Destroy(shot, 3f);
-      }
+            Destroy(shot, 3f);
+        }
 
-        transform.Translate(Input.GetAxisRaw("Horizontal") * speed * Time.deltaTime, 0f,0f);
+        transform.Translate(Input.GetAxisRaw("Horizontal") * speed * Time.deltaTime, 0f, 0f);
 
     }
 }
