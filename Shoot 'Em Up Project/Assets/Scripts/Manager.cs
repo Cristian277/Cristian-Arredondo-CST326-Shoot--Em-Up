@@ -15,7 +15,7 @@ public class Manager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+        HI_SCORE_TEXT.GetComponent<TextMeshProUGUI>().text = String.Format("{0:0000}", PlayerPrefs.GetInt("High Score"));
     }
 
     // Update is called once per frame
@@ -31,7 +31,8 @@ public class Manager : MonoBehaviour
         if (currentScore > highScore)
         {
             highScore = currentScore;
-            HI_SCORE_TEXT.GetComponent<TextMeshProUGUI>().text = highScore.ToString();
+            PlayerPrefs.SetInt("High Score", highScore);
+            HI_SCORE_TEXT.GetComponent<TextMeshProUGUI>().text = String.Format("{0:0000}", PlayerPrefs.GetInt("High Score"));
         }
 
         Time.timeScale = 0f;

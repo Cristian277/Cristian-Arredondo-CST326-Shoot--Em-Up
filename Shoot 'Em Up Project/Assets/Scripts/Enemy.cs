@@ -8,6 +8,7 @@ public class Enemy : MonoBehaviour
     public GameObject Manager;
     public GameObject enemyBullet;
     public Transform shootingOffset;
+
     public float speed;
     public float fireRate = 0.0599f;
     public bool gameIsOver = false;
