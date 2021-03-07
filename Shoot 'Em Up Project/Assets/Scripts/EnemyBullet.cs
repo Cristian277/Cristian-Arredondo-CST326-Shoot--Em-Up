@@ -20,13 +20,21 @@ public class EnemyBullet : MonoBehaviour
     private void Fire()
     {
         myRigidbody2D.velocity = Vector2.up * -speed;
+
         Debug.Log("Wwweeeeee");
+    }
+
+    private void Update()
+    {
+        if (myRigidbody2D.position.y <= -7)
+        {
+            Destroy(gameObject);
+            Debug.Log("Bullet Destroyed");
+        }
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-
-
         if (collision.collider.name == "Player")
         {
             Destroy(this.gameObject);

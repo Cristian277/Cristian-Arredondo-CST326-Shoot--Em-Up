@@ -15,10 +15,19 @@ public class Bullet : MonoBehaviour
         Fire();
     }
 
+    private void Update()
+    {
+        if (myRigidbody2D.transform.position.y >= 7)
+        {
+            Destroy(this.gameObject);
+        }
+    }
+
     // Update is called once per frame
     private void Fire()
     {
         myRigidbody2D.velocity = Vector2.up * speed;
+
         Debug.Log("Wwweeeeee");
     }
 
