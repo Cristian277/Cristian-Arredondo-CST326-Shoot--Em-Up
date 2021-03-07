@@ -8,6 +8,7 @@ public class Player : MonoBehaviour
     public GameObject Manager;
     public Transform shottingOffset;
     public int speed = 5;
+
     // Update is called once per frame
     void Update()
     {
@@ -20,6 +21,5 @@ public class Player : MonoBehaviour
         }
 
         transform.Translate(Input.GetAxisRaw("Horizontal") * speed * Time.deltaTime, 0f, 0f);
-
     }
 }

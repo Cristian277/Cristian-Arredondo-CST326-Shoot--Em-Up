@@ -24,7 +24,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 758955723522753359}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: -1, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 6604860522166403265}
@@ -154,3 +154,5 @@ MonoBehaviour:
   enemyBullet: {fileID: 2457785739244962049, guid: 088b2d232bbf24b5ea818eb98baa3fda,
     type: 3}
   shootingOffset: {fileID: 1686885224801998244}
+  speed: 0
+  fireRate: 0.999

@@ -31,14 +31,30 @@ public class Manager : MonoBehaviour
         if (currentScore > highScore)
         {
             highScore = currentScore;
+            HI_SCORE_TEXT.GetComponent<TextMeshProUGUI>().text = highScore.ToString();
         }
 
         Time.timeScale = 0f;
     }
 
-    public void increaseScore()
+    public void increaseScoreRed()
     {
-        currentScore++;
+        currentScore+=60;
+        ScoreNumberText.GetComponent<TextMeshProUGUI>().text = String.Format("{0:0000}", currentScore); ;
+    }
+    public void increaseScoreBlue()
+    {
+        currentScore+=30;
+        ScoreNumberText.GetComponent<TextMeshProUGUI>().text = String.Format("{0:0000}", currentScore); ;
+    }
+    public void increaseScoreGreen()
+    {
+        currentScore+=20;
+        ScoreNumberText.GetComponent<TextMeshProUGUI>().text = String.Format("{0:0000}", currentScore); ;
+    }
+    public void increaseScoreYellow()
+    {
+        currentScore+=10;
         ScoreNumberText.GetComponent<TextMeshProUGUI>().text = String.Format("{0:0000}", currentScore); ;
     }
 }
