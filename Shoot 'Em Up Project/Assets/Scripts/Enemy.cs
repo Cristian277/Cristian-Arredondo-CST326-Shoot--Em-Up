@@ -65,11 +65,9 @@ public class Enemy : MonoBehaviour
         if(enemyHolder.childCount == 1)
         {
             CancelInvoke();
+            Time.timeScale = 0;
             Debug.Log("Player wins!");
             Debug.Log("Press R to Restart.");
-
-            //GameObject.Find("Manager").GetComponent<Manager>().WIN_TEXT.GetComponent<TextMeshProUGUI>().text = "You Win! Press R to Restart";
-            //gameIsOver = true;
         }
     }
 
