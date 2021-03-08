@@ -14,7 +14,11 @@ public class StartGame : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        HI_SCORE_TEXT.GetComponent<TextMeshProUGUI>().text = String.Format("{0:0000}", PlayerPrefs.GetInt("High Score"));
+        //HERE TO RESET HIGH SCORE
+
+        //PlayerPrefs.SetInt("HighScore", 0);
+
+        HI_SCORE_TEXT.GetComponent<TextMeshProUGUI>().text = String.Format("{0:0000}", PlayerPrefs.GetInt("HighScore"));
     }
 
     // Update is called once per frame

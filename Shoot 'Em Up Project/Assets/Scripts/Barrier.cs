@@ -20,6 +20,7 @@ public class Barrier : MonoBehaviour
 
     void OnCollisionEnter2D(Collision2D collision)
     {
+        /*
         if(collision.collider.tag == "EnemyBullet")
         {
             health--;
@@ -29,6 +30,15 @@ public class Barrier : MonoBehaviour
                 Debug.Log("Barrier Destroyed.");
 
             }
+        }
+        */
+
+        health--;
+        if (health == 0)
+        {
+            Destroy(this.gameObject);
+            Debug.Log("Barrier Destroyed.");
+
         }
     }
 }

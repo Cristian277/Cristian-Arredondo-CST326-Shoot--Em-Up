@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 
 public class Enemy : MonoBehaviour
@@ -63,8 +64,12 @@ public class Enemy : MonoBehaviour
 
         if(enemyHolder.childCount == 1)
         {
+            CancelInvoke();
             Debug.Log("Player wins!");
-            gameIsOver = true;
+            Debug.Log("Press R to Restart.");
+
+            //GameObject.Find("Manager").GetComponent<Manager>().WIN_TEXT.GetComponent<TextMeshProUGUI>().text = "You Win! Press R to Restart";
+            //gameIsOver = true;
         }
     }
 
