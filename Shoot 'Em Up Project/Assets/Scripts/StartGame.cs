@@ -20,13 +20,4 @@ public class StartGame : MonoBehaviour
 
         HI_SCORE_TEXT.GetComponent<TextMeshProUGUI>().text = String.Format("{0:0000}", PlayerPrefs.GetInt("HighScore"));
     }
-
-    // Update is called once per frame
-    void Update()
-    {
-        if (Input.GetKeyDown(KeyCode.S))
-        {
-            SceneManager.LoadScene(1);
-        }
-    }
 }
