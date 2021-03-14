@@ -8,6 +8,9 @@ TagManager:
   - EnemyBullet
   - Barrier
   - GrayUFO
+  - BlueUFO
+  - PurpleUFO
+  - RedUFO
   layers:
   - Default
   - TransparentFX

@@ -71,7 +71,7 @@ public class Enemy : MonoBehaviour
 
     void OnCollisionEnter2D(Collision2D collision)
     {
-        if (this.gameObject.name == "GrayUFO")
+        if (this.gameObject.tag == "GrayUFO")
         {
             animator = this.gameObject.GetComponent<Animator>();
             animator.SetTrigger("Death");
@@ -80,21 +80,21 @@ public class Enemy : MonoBehaviour
             Destroy(this.gameObject, 0.4f);
             GameObject.Find("Manager").GetComponent<Manager>().increaseScoreGray();
         }
-        else if (this.gameObject.name == "RedUFO")
+        else if (this.gameObject.tag == "RedUFO")
         {
             animator = this.gameObject.GetComponent<Animator>();
             animator.SetTrigger("Death");
             Destroy(this.gameObject, 0.4f);
             GameObject.Find("Manager").GetComponent<Manager>().increaseScoreRed();
         }
-        else if (this.gameObject.name == "BlueUFO")
+        else if (this.gameObject.tag == "BlueUFO")
         {
             animator = this.gameObject.GetComponent<Animator>();
             animator.SetTrigger("Death");
             Destroy(this.gameObject, 0.4f);
             GameObject.Find("Manager").GetComponent<Manager>().increaseScoreBlue();
         }
-        else if (this.gameObject.name == "PurpleUFO")
+        else if (this.gameObject.tag == "PurpleUFO")
         {
             animator = this.gameObject.GetComponent<Animator>();
             animator.SetTrigger("Death");
