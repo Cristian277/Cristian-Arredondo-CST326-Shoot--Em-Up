@@ -53,12 +53,12 @@ public class Manager : MonoBehaviour
         currentScore+=30;
         ScoreNumberText.GetComponent<TextMeshProUGUI>().text = String.Format("{0:0000}", currentScore); ;
     }
-    public void increaseScoreGreen()
+    public void increaseScorePurple()
     {
         currentScore+=20;
         ScoreNumberText.GetComponent<TextMeshProUGUI>().text = String.Format("{0:0000}", currentScore); ;
     }
-    public void increaseScoreYellow()
+    public void increaseScoreGray()
     {
         currentScore+=10;
         ScoreNumberText.GetComponent<TextMeshProUGUI>().text = String.Format("{0:0000}", currentScore); ;

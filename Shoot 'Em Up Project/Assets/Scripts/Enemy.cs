@@ -73,29 +73,29 @@ public class Enemy : MonoBehaviour
 
     void OnCollisionEnter2D(Collision2D collision)
     {
-        if (this.gameObject.name == "RedEnemy")
+        if (this.gameObject.name == "GrayUFO")
         {
+            Debug.Log("Killed Gray UFO");
+            Destroy(this.gameObject);
+            GameObject.Find("Manager").GetComponent<Manager>().increaseScoreGray();
+        }
+        else if (this.gameObject.name == "RedUFO")
+        {
+            Debug.Log("Killed Red UFO");
             Destroy(this.gameObject);
             GameObject.Find("Manager").GetComponent<Manager>().increaseScoreRed();
-            Debug.Log("Red Enemy Killed.");
         }
-        else if (this.gameObject.name == "BlueEnemy")
+        else if (this.gameObject.name == "BlueUFO")
         {
+            Debug.Log("Killed Blue UFO");
             Destroy(this.gameObject);
             GameObject.Find("Manager").GetComponent<Manager>().increaseScoreBlue();
-            Debug.Log("Blue Enemy Killed.");
         }
-        else if (this.gameObject.name == "YellowEnemy")
+        else if (this.gameObject.name == "PurpleUFO")
         {
+            Debug.Log("Killed Purple UFO");
             Destroy(this.gameObject);
-            GameObject.Find("Manager").GetComponent<Manager>().increaseScoreYellow();
-            Debug.Log("Yellow Enemy Killed.");
-        }
-        else if (this.gameObject.name == "GreenEnemy")
-        {
-            Destroy(this.gameObject);
-            GameObject.Find("Manager").GetComponent<Manager>().increaseScoreGreen();
-            Debug.Log("Green Enemy Killed.");
+            GameObject.Find("Manager").GetComponent<Manager>().increaseScorePurple();
         }
     }
 

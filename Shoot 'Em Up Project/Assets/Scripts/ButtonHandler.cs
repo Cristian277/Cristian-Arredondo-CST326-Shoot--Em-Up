@@ -9,6 +9,5 @@ public class ButtonHandler : MonoBehaviour
     public void GoToGameScene()
     {
         SceneManager.LoadScene(1);
-        //Debug.Log("Button Clicked");
     }
 }

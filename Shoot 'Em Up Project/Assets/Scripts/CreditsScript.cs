@@ -5,7 +5,7 @@ using UnityEngine.SceneManagement;
 
 public class CreditsScript : MonoBehaviour
 {
-    private float delayBeforeLoading = 3f;
+    private float delayBeforeLoading = 5f;
     [SerializeField]
 
     private float timeElapsed;

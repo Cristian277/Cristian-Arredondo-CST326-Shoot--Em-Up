@@ -8,7 +8,7 @@ public class EnemyBullet : MonoBehaviour
     private Rigidbody2D myRigidbody2D;
     public float speed = 5;
     public GameObject Manager;
-    //public GameObject Manager;
+
     // Start is called before the first frame update
 
     void Start()
