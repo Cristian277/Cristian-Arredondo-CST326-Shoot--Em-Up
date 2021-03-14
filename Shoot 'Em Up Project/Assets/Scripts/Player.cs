@@ -6,10 +6,19 @@ public class Player : MonoBehaviour
 {
     public GameObject bullet;
     public GameObject Manager;
+
     public Transform shottingOffset;
     public int speed = 5;
-    public Animator animator;
 
+    public Animator animator;
+    public AudioSource audioSource;
+
+    public AudioClip tankFire;
+
+    void Awake()
+    {
+        audioSource = GetComponent<AudioSource>();
+    }
     // Update is called once per frame
     void Update()
     {
@@ -18,6 +27,7 @@ public class Player : MonoBehaviour
             animator.SetTrigger("Firing");
             GameObject shot = Instantiate(bullet, shottingOffset.position, Quaternion.identity);
             Debug.Log("Bang!");
+            audioSource.PlayOneShot(tankFire);
 
             Destroy(shot, 3f);
         }

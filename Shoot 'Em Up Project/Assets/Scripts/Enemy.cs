@@ -15,6 +15,18 @@ public class Enemy : MonoBehaviour
     public float fireRate = 0.0599f;
     public bool gameIsOver = false;
 
+    //public AudioSource audioSource;
+
+    //public AudioClip AlienExplosion;
+
+    /*
+    void Awake()
+    {
+        audioSource = GetComponent<AudioSource>();
+        //if (audioSource == null) audioSource = gameObject.AddComponent<AudioSource>();
+    }
+    */
+
     void Start()
     {
         InvokeRepeating("MoveEnemy", 0.1f, 0.3f);
@@ -73,15 +85,16 @@ public class Enemy : MonoBehaviour
     {
         if (this.gameObject.tag == "GrayUFO")
         {
+            //audioSource.PlayOneShot(AlienExplosion);
             animator = this.gameObject.GetComponent<Animator>();
             animator.SetTrigger("Death");
-            this.gameObject.GetComponent<Animator>().SetTrigger("Death");
             Debug.Log("Killed Gray UFO");
             Destroy(this.gameObject, 0.4f);
             GameObject.Find("Manager").GetComponent<Manager>().increaseScoreGray();
         }
         else if (this.gameObject.tag == "RedUFO")
         {
+            //audioSource.PlayOneShot(AlienExplosion);
             animator = this.gameObject.GetComponent<Animator>();
             animator.SetTrigger("Death");
             Destroy(this.gameObject, 0.4f);
@@ -89,6 +102,7 @@ public class Enemy : MonoBehaviour
         }
         else if (this.gameObject.tag == "BlueUFO")
         {
+            //audioSource.PlayOneShot(AlienExplosion);
             animator = this.gameObject.GetComponent<Animator>();
             animator.SetTrigger("Death");
             Destroy(this.gameObject, 0.4f);
@@ -96,6 +110,7 @@ public class Enemy : MonoBehaviour
         }
         else if (this.gameObject.tag == "PurpleUFO")
         {
+            //audioSource.PlayOneShot(AlienExplosion);
             animator = this.gameObject.GetComponent<Animator>();
             animator.SetTrigger("Death");
             Debug.Log("Killed Purple UFO");

@@ -142,3 +142,5 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 5
+  audioSource: {fileID: 0}
+  AlienExplosion: {fileID: 8300000, guid: 8f8681b735c5640bba9222de7b3e964f, type: 3}
