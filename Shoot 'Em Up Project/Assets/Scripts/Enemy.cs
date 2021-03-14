@@ -48,9 +48,9 @@ public class Enemy : MonoBehaviour
                 Instantiate(enemyBullet, enemy.transform.position, enemy.transform.rotation);
             }
 
-            if (enemy.position.y <= -7)
+            if (enemy.position.y <= -3)
             {
-                Time.timeScale = 0f;
+                //Time.timeScale = 0f;
                 gameIsOver = true;
             }
         }
