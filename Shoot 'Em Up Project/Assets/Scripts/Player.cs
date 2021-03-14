@@ -8,12 +8,14 @@ public class Player : MonoBehaviour
     public GameObject Manager;
     public Transform shottingOffset;
     public int speed = 5;
+    public Animator animator;
 
     // Update is called once per frame
     void Update()
     {
         if (Input.GetKeyDown(KeyCode.Space))
         {
+            animator.SetTrigger("Firing");
             GameObject shot = Instantiate(bullet, shottingOffset.position, Quaternion.identity);
             Debug.Log("Bang!");
 

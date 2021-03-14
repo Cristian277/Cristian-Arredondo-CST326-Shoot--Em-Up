@@ -65,7 +65,6 @@ public class Enemy : MonoBehaviour
         if (enemyHolder.childCount == 1)
         {
             CancelInvoke();
-            //Time.timeScale = 0;
             Debug.Log("Player wins!");
             GameObject.Find("Manager").GetComponent<Manager>().gameOver();
         }
@@ -75,24 +74,28 @@ public class Enemy : MonoBehaviour
     {
         if (this.gameObject.name == "GrayUFO")
         {
+            GetComponent<Animator>().SetTrigger("Death");
             Debug.Log("Killed Gray UFO");
             Destroy(this.gameObject);
             GameObject.Find("Manager").GetComponent<Manager>().increaseScoreGray();
         }
         else if (this.gameObject.name == "RedUFO")
         {
+            GetComponent<Animator>().SetTrigger("Death");
             Debug.Log("Killed Red UFO");
             Destroy(this.gameObject);
             GameObject.Find("Manager").GetComponent<Manager>().increaseScoreRed();
         }
         else if (this.gameObject.name == "BlueUFO")
         {
+            GetComponent<Animator>().SetTrigger("Death");
             Debug.Log("Killed Blue UFO");
             Destroy(this.gameObject);
             GameObject.Find("Manager").GetComponent<Manager>().increaseScoreBlue();
         }
         else if (this.gameObject.name == "PurpleUFO")
         {
+            GetComponent<Animator>().SetTrigger("Death");
             Debug.Log("Killed Purple UFO");
             Destroy(this.gameObject);
             GameObject.Find("Manager").GetComponent<Manager>().increaseScorePurple();
