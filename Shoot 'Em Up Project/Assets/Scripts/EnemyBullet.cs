@@ -38,8 +38,9 @@ public class EnemyBullet : MonoBehaviour
     {
         if (collision.collider.name == "Player")
         {
+            collision.gameObject.GetComponent<Animator>().SetTrigger("Death");
             Destroy(this.gameObject);
-            Destroy(collision.gameObject);
+            Destroy(collision.gameObject,1f);
             Debug.Log("Player is dead.");
             GameObject.Find("Manager").GetComponent<Manager>().gameOver();
         }

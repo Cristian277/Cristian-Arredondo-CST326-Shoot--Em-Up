@@ -39,7 +39,6 @@ public class Manager : MonoBehaviour
     public void gameOver()
     {
         Debug.Log("Game Over");
-
         SceneManager.LoadScene(2);
     }
 

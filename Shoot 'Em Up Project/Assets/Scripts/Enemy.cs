@@ -9,12 +9,11 @@ public class Enemy : MonoBehaviour
     public GameObject Manager;
     public GameObject enemyBullet;
     public Transform shootingOffset;
+    private Animator animator;
 
     public float speed;
     public float fireRate = 0.0599f;
     public bool gameIsOver = false;
-
-    // Start is called before the first frame update
 
     void Start()
     {
@@ -74,37 +73,34 @@ public class Enemy : MonoBehaviour
     {
         if (this.gameObject.name == "GrayUFO")
         {
-            GetComponent<Animator>().SetTrigger("Death");
+            animator = this.gameObject.GetComponent<Animator>();
+            animator.SetTrigger("Death");
+            this.gameObject.GetComponent<Animator>().SetTrigger("Death");
             Debug.Log("Killed Gray UFO");
-            Destroy(this.gameObject);
+            Destroy(this.gameObject, 0.4f);
             GameObject.Find("Manager").GetComponent<Manager>().increaseScoreGray();
         }
         else if (this.gameObject.name == "RedUFO")
         {
-            GetComponent<Animator>().SetTrigger("Death");
-            Debug.Log("Killed Red UFO");
-            Destroy(this.gameObject);
+            animator = this.gameObject.GetComponent<Animator>();
+            animator.SetTrigger("Death");
+            Destroy(this.gameObject, 0.4f);
             GameObject.Find("Manager").GetComponent<Manager>().increaseScoreRed();
         }
         else if (this.gameObject.name == "BlueUFO")
         {
-            GetComponent<Animator>().SetTrigger("Death");
-            Debug.Log("Killed Blue UFO");
-            Destroy(this.gameObject);
+            animator = this.gameObject.GetComponent<Animator>();
+            animator.SetTrigger("Death");
+            Destroy(this.gameObject, 0.4f);
             GameObject.Find("Manager").GetComponent<Manager>().increaseScoreBlue();
         }
         else if (this.gameObject.name == "PurpleUFO")
         {
-            GetComponent<Animator>().SetTrigger("Death");
+            animator = this.gameObject.GetComponent<Animator>();
+            animator.SetTrigger("Death");
             Debug.Log("Killed Purple UFO");
-            Destroy(this.gameObject);
+            Destroy(this.gameObject,0.4f);
             GameObject.Find("Manager").GetComponent<Manager>().increaseScorePurple();
         }
     }
-
-    void FireBullet()
-    {
-        Instantiate(enemyBullet, shootingOffset.position, Quaternion.identity);
-    }
-
 }
