@@ -14,11 +14,12 @@ public class Manager : MonoBehaviour
     public GameObject GAME_OVER_TEXT;
 
     int highScore = 0;
-    int currentScore = 0;
+    int currentScore;
 
     // Start is called before the first frame update
     void Start()
     {
+        currentScore = 0;
         HI_SCORE_TEXT.GetComponent<TextMeshProUGUI>().text = String.Format("{0:0000}", PlayerPrefs.GetInt("HighScore"));
         highScore = PlayerPrefs.GetInt("HighScore");
     }
